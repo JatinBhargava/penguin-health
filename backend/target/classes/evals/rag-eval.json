@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What was my Vitamin D level?",
+    "expectedAnswer": "21 ng/mL"
+  },
+  {
+    "question": "What was my HbA1c?",
+    "expectedAnswer": "5.9%"
+  },
+  {
+    "question": "What was my creatinine level?",
+    "expectedAnswer": "1.02 mg/dL"
+  },
+  {
+    "question": "What was my platelet count?",
+    "expectedAnswer": "245,000 /uL"
+  },
+  {
+    "question": "What was my LDL cholesterol?",
+    "expectedAnswer": "137 mg/dL"
+  }
+]

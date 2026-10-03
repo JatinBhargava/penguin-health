@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: pengunie-postgres
+    environment:
+      POSTGRES_DB: pengunie
+      POSTGRES_USER: pengunie
+      POSTGRES_PASSWORD: pengunie
+    ports:
+      - "5432:5432"
+    volumes:
+      - pengunie_pgdata:/var/lib/postgresql/data
+
+volumes:
+  pengunie_pgdata:

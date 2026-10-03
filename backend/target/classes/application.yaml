@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: pengunie-health
+
+  # Load OPENAI_API_KEY etc. from the repo-root .env (works whether run from backend/ or the repo root)
+  config:
+    import: "optional:file:../.env[.properties],optional:file:.env[.properties]"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pengunie
+    username: pengunie
+    password: pengunie
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+app:
+  document-storage-path: ./documents
+openai:
+  api-key: ${OPENAI_API_KEY}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+server:
+  port: 8080
