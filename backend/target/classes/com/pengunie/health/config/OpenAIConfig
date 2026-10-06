@@ -1,0 +1,27 @@
+package com.pengunie.health.config;
+
+import io.github.cdimascio.dotenv.Dotenv;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenAIConfig {
+
+    @Bean
+    public String openAiApiKey() {
+        Dotenv dotenv = Dotenv.configure()
+                .directory("../")
+                .ignoreIfMissing()
+                .load();
+
+        String key = dotenv.get("OPENAI_API_KEY");
+
+        if (key == null || key.isBlank()) {
+            throw new IllegalStateException(
+                    "OPENAI_API_KEY is not configured"
+            );
+        }
+
+        return key;
+    }
+}

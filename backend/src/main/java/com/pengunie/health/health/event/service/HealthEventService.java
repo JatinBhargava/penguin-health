@@ -66,7 +66,7 @@ public class HealthEventService {
                 .collect(Collectors.toMap(
                         DocumentChunk::getChunkIndex,
                         DocumentChunk::getId
-                ));
+                )); 
 
         List<HealthEvent> events = extractedEvents.stream()
                 .map(event -> toEntity(
